@@ -258,6 +258,7 @@ out
 # Nuxt.js build / generate output
 .nuxt
 dist
+!triggers/*/dist
 
 # Gatsby files
 .cache/

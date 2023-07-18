@@ -27,7 +27,7 @@ jobs:
     concurrency: actionsflow
     steps:
       - uses: actions/checkout@v2
-      - run: npm i
+      # - run: npm i
       - name: Run Actionsflow
         uses: actionsflow/actionsflow-action@v1
         with:

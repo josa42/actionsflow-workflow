@@ -2,11 +2,15 @@
   "name": "wurmberg_amtsblatt",
   "version": "0.0.0",
   "description": "",
-  "main": "index.js",
+  "main": "dist/index.js",
   "scripts": {
+    "check": "tsc",
+    "build": "npx esbuild src/index.ts --outfile=dist/index.js --bundle --loader:.ts=ts --platform=node",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "dependencies": {
-    "cheerio": "^1.0.0-rc.12"
+    "cheerio": "^1.0.0-rc.12",
+    "esbuild": "^0.18.14",
+    "typescript": "^5.1.6"
   }
 }
