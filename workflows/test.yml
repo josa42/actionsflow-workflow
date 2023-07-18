@@ -1,5 +1,5 @@
 on:
-  local_trigger_test:
+  wurmberg_amtsblatt:
 jobs:
   print:
     name: Print
@@ -7,5 +7,11 @@ jobs:
     steps:
       - name: Print Outputs
         run: |
-          echo "id:    ${{ on.local_trigger_test.outputs.id }}"
-          echo "title: ${{ on.local_trigger_test.outputs.title }}"
+          echo "id:    ${{ on.wurmberg_amtsblatt.outputs.id }}"
+      - uses: appleboy/telegram-action@master
+        with:
+          to: ${{ secrets.TELEGRAM_WURMBERGBOT_TO }}
+          token: ${{ secrets.TELEGRAM_WURMBERGBOT_TOKEN }}
+          message: |
+            Neues Amtsblatt: ${{ on.wurmberg_amtsblatt.outputs.title }}
+            => ${{ on.wurmberg_amtsblatt.outputs.url }}

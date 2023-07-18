@@ -11,7 +11,9 @@
     "actionsflow",
     "workflow"
   ],
-  "license": "0BSD",
+  "workspaces": [
+    "triggers/*"
+  ],
   "scripts": {
     "build": "actionsflow build",
     "start": "actionsflow start",
@@ -26,5 +28,8 @@
   },
   "bugs": {
     "url": "https://github.com/actionsflow/actionsflow-workflow-default/issues"
+  },
+  "dependencies": {
+    "cheerio": "^1.0.0-rc.12"
   }
 }
