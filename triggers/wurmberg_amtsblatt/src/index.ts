@@ -23,19 +23,19 @@ module.exports = class Test {
 
     const items: Array<Item> = [];
 
-    $(".uk-list.downloads li a").each((_i, item) => {
+    $("nav div.border-b a").each((_i, item) => {
       const $item = $(item);
       const itemURL = new URL($item.attr("href") ?? "", urlBase).toString();
 
       items.push({
         id: hash(itemURL),
-        title: $item.find("strong:first").text(),
+        title: $item.find(".font-bold:first").text(),
         url: itemURL,
       });
     });
 
-    // only the latest 3
-    return items.reverse().slice(-3);
+    // only the latest 5
+    return items.reverse().slice(-5);
   }
 };
 
